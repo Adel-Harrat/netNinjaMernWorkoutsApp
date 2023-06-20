@@ -11,12 +11,15 @@ const WorkoutDetails = ({ title, load, reps, createdAt, _id }) => {
   const handleClick = async () => {
     if (!user) return;
 
-    const response = await fetch("http://localhost:1000/api/workouts/" + _id, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
+    const response = await fetch(
+      "https://net-ninja-mern-worouts-api.vercel.app/api/workouts/" + _id,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
 
     const json = await response.json();
 

@@ -12,11 +12,16 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("http://localhost:1000/api/workouts", {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      // https://net-ninja-mern-worouts-api.vercel.app/
+      // https://net-ninja-mern-worouts-api.vercel.app/
+      const response = await fetch(
+        "https://net-ninja-mern-worouts-api.vercel.app/api/workouts",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       const json = await response.json();
 
       if (response.ok) {
