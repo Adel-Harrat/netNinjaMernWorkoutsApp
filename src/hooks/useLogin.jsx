@@ -10,13 +10,16 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const res = await fetch("http://localhost:1000/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const res = await fetch(
+      "https://net-ninja-mern-worouts-api.vercel.app/api/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
 
     const json = await res.json();
 
